@@ -86,38 +86,38 @@ class uiLCD:
 	def update_text(self):
 	    return ''
 
-		#Wipe the text areas.
-		self.screen.fill(0, (280,0,200,280))
-		self.screen.fill((255,255,255),(0,280,480,40))
-	
-		#NOW PLAYING
-		if (self.state == "play" or self.state == "pause"):
-			l1 = self.title
-			l2 = self.artist + ' (' + self.album + ')'
-		elif self.state == 'disconnected':
-			l1 = "Connecting..."
-			l2 = "Please Wait"
-		else:
-			l1 = "MusicBox Ready"
-			l2 = "192.168.1.90"
-		
-		text = self.font["field"].render(l1, 1,(0,0,0))
-		self.screen.blit(text, (10, 278)) # Track
-		text = self.font["details"].render(l2, 1,(0,0,0))
-		self.screen.blit(text, (10, 302)) # Artist
-		
-		#PLAYLIST
-		text = self.font["details"].render('PLAYLIST', 1,(230,228,227))
-		self.screen.blit(text, (285, 3)) #next
-		
-		if (self.playlist):
-			i=1
-			while i <= 13 and i+self.plpos < self.pllen:
-				words =  self.playlist[i+self.plpos]['title']
-				text = self.font["details"].render(words, 1,(230,228,227))
-				self.screen.blit(text, (285, 3 + (i*19))) 
-				i = i + 1
-		pygame.display.update()
+#		#Wipe the text areas.
+#		self.screen.fill(0, (280,0,200,280))
+#		self.screen.fill((255,255,255),(0,280,480,40))
+#
+#		#NOW PLAYING
+#		if (self.state == "play" or self.state == "pause"):
+#			l1 = self.title
+#			l2 = self.artist + ' (' + self.album + ')'
+#		elif self.state == 'disconnected':
+#			l1 = "Connecting..."
+#			l2 = "Please Wait"
+#		else:
+#			l1 = "MusicBox Ready"
+#			l2 = "192.168.1.90"
+#
+#		text = self.font["field"].render(l1, 1,(0,0,0))
+#		self.screen.blit(text, (10, 278)) # Track
+#		text = self.font["details"].render(l2, 1,(0,0,0))
+#		self.screen.blit(text, (10, 302)) # Artist
+#
+#		#PLAYLIST
+#		text = self.font["details"].render('PLAYLIST', 1,(230,228,227))
+#		self.screen.blit(text, (285, 3)) #next
+#
+#		if (self.playlist):
+#			i=1
+#			while i <= 13 and i+self.plpos < self.pllen:
+#				words =  self.playlist[i+self.plpos]['title']
+#				text = self.font["details"].render(words, 1,(230,228,227))
+#				self.screen.blit(text, (285, 3 + (i*19)))
+#				i = i + 1
+#		pygame.display.update()
 
 
 	def display_img(self,img):
