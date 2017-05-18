@@ -84,6 +84,8 @@ class uiLCD:
 
 
 	def update_text(self):
+	    return
+
 		#Wipe the text areas.
 		self.screen.fill(0, (280,0,200,280))
 		self.screen.fill((255,255,255),(0,280,480,40))
@@ -165,7 +167,7 @@ class uiLCD:
 			return (0)
 			
 		b = pygame.image.load(a)
-		b = pygame.transform.scale(b,(280,280))
+		b = pygame.transform.scale(b,(320,320))
 		
 		# check cache again before we add image
 		for i in range(len(self.cover_cache)):
