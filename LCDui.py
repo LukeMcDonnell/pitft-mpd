@@ -84,7 +84,7 @@ class uiLCD:
 
 
 	def update_text(self):
-	    return
+	    return ''
 
 		#Wipe the text areas.
 		self.screen.fill(0, (280,0,200,280))
