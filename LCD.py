@@ -56,20 +56,20 @@ for i in range(3):
 
 # WAIT FOR EXIT
 def signal_handler(signal, frame):
-        print('Exiting...')
-	#uiLCD.update_LCD("   Exiting..."," ")
-	uiLCD.LCD.clear()
-	uiLCD.lcd.message("   Exiting..."[:16]+'\n'+" "[:16])
-	mpdutil.client.close()
-	mpdutil.client.disconnect()
-	print('Closed MPD')
-	pygame.quit()
-	print('Quit pygame')
-        sys.exit(0)
+    print('Exiting...')
+    #uiLCD.update_LCD("   Exiting..."," ")
+    uiLCD.lcd.clear()
+    uiLCD.lcd.message("   Exiting..."[:16]+'\n'+" "[:16])
+    mpdutil.client.close()
+    mpdutil.client.disconnect()
+    print('Closed MPD')
+    pygame.quit()
+    print('Quit pygame')
+    sys.exit(0)
 
 signal.signal(signal.SIGINT, signal_handler)
 signal.signal(signal.SIGTERM, signal_handler)
 signal.pause()
 
 while 1:
-	sleep(100000000)
+    sleep(100000000)
