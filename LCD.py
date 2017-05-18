@@ -58,6 +58,7 @@ for i in range(3):
 def signal_handler(signal, frame):
         print('Exiting...')
 	#uiLCD.update_LCD("   Exiting..."," ")
+	ui.LCD.clear()
 	uiLCD.lcd.message("   Exiting..."[:16]+'\n'+" "[:16])
 	mpdutil.client.close()
 	mpdutil.client.disconnect()

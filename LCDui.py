@@ -37,7 +37,7 @@ class uiLCD:
 		self.defaultImg = self.path + 'default.jpg'
 		a = StringIO.StringIO(urllib.urlopen(self.defaultImg).read())
 		b = pygame.image.load(a)
-		self.defaultImg_io = pygame.transform.scale(b,(280,280))
+		self.defaultImg_io = pygame.transform.scale(b,(380,380))
 
 		self.line1 = ''
 		self.line2 = ''
