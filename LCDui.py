@@ -121,7 +121,7 @@ class uiLCD:
 
 
 	def display_img(self,img):
-			self.screen.blit(img,(0,0))
+			self.screen.blit(img,(50,-30))
 			pygame.display.update()
 		
 	def update_cover(self):
@@ -167,7 +167,7 @@ class uiLCD:
 			return (0)
 			
 		b = pygame.image.load(a)
-		b = pygame.transform.scale(b,(320,320))
+		b = pygame.transform.scale(b,(380,380))
 		
 		# check cache again before we add image
 		for i in range(len(self.cover_cache)):
